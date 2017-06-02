@@ -50,6 +50,7 @@ void BusB::receive(CANMSG msg)
     if (!parsed) parsed = unit_ezs.parse(msg);
     if (!parsed) parsed = unit_tvl.parse(msg);
     if (!parsed) parsed = unit_tvr.parse(msg);
+    if (!parsed) parsed = unit_kla.parse(msg);
     
     if (!parsed) Utils::print_msg(msg);
 }

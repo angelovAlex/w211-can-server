@@ -9,6 +9,52 @@
 #include "Units.hpp"
 #include "Utils.hpp"
 
+bool Unit_KLA::parse(CANMSG msg)
+{
+    if (msg.address == signal_kla_a1.id) {
+        Utils::parse_param(&signal_kla_a1.ABVENT_W_ZU, msg.data);
+        Utils::parse_param(&signal_kla_a1.DEFROST_AKT, msg.data);
+        Utils::parse_param(&signal_kla_a1.EC_AKT, msg.data);
+        Utils::parse_param(&signal_kla_a1.GEB_LSTG, msg.data);
+        Utils::parse_param(&signal_kla_a1.HEIZEN, msg.data);
+        Utils::parse_param(&signal_kla_a1.HHS_EIN, msg.data);
+        Utils::parse_param(&signal_kla_a1.IFG_EIN, msg.data);
+        Utils::parse_param(&signal_kla_a1.KJAL_ZU, msg.data);
+        Utils::parse_param(&signal_kla_a1.KOMP_STELL, msg.data);
+        Utils::parse_param(&signal_kla_a1.LKM_VORN, msg.data);
+        Utils::parse_param(&signal_kla_a1.LKO_VORN, msg.data);
+        Utils::parse_param(&signal_kla_a1.LKU_VORN, msg.data);
+        Utils::parse_param(&signal_kla_a1.LL_DZA, msg.data);
+        Utils::parse_param(&signal_kla_a1.LUEFTEN, msg.data);
+        Utils::parse_param(&signal_kla_a1.M_KOMP, msg.data);
+        Utils::parse_param(&signal_kla_a1.NLFTS, msg.data);
+        Utils::parse_param(&signal_kla_a1.REST_AKT, msg.data);
+        Utils::parse_param(&signal_kla_a1.T_INNEN_KLA, msg.data);
+        Utils::parse_param(&signal_kla_a1.UL_AKT_KLA, msg.data);
+        Utils::parse_param(&signal_kla_a1.ZH_ANF, msg.data);
+        Utils::parse_param(&signal_kla_a1.ZH_EIN_OK, msg.data);
+        Utils::parse_param(&signal_kla_a1.ZWP_EIN, msg.data);
+        return true;
+    } else if (msg.address == signal_kla_a2.id) {
+        Utils::parse_param(&signal_kla_a2.FHL_KLA, msg.data);
+        Utils::parse_param(&signal_kla_a2.FHR_KLA, msg.data);
+        Utils::parse_param(&signal_kla_a2.FVL_KLA, msg.data);
+        Utils::parse_param(&signal_kla_a2.FVR_KLA, msg.data);
+        Utils::parse_param(&signal_kla_a2.KB_MOD_KLA, msg.data);
+        Utils::parse_param(&signal_kla_a2.KB_RI_KLA, msg.data);
+        Utils::parse_param(&signal_kla_a2.SHD_KLA, msg.data);
+        return true;
+    } else if (msg.address == signal_kla_a3.id) {
+        Utils::parse_param(&signal_kla_a3.T_TAU, msg.data);
+        return true;
+    } else if (msg.address == signal_kla_a5.id) {
+        Utils::parse_param(&signal_kla_a5.HZL_ANF, msg.data);
+        Utils::parse_param(&signal_kla_a5.T_AUSSEN_WM, msg.data);
+        return true;
+    }
+    return false;
+}
+
 bool Unit_TVR::parse(CANMSG msg)
 {
     if (msg.address ==  signal_tvr_a3.id) {
@@ -23,6 +69,26 @@ bool Unit_TVL::parse(CANMSG msg)
 {
     if (msg.address ==  signal_tvl_a3.id) {
         Utils::parse_param(&signal_tvl_a3.FESTE_VL, msg.data);
+        //printf("window position %llu\n", signal_tvl_a3.FESTE_VL.val);
+        return true;
+    }
+    return false;
+}
+
+bool Unit_THL::parse(CANMSG msg)
+{
+    if (msg.address ==  signal_thl_a1.id) {
+        Utils::parse_param(&signal_thl_a1.FESTE_HL, msg.data);
+        //printf("window position %llu\n", signal_tvl_a3.FESTE_VL.val);
+        return true;
+    }
+    return false;
+}
+
+bool Unit_THR::parse(CANMSG msg)
+{
+    if (msg.address ==  signal_thr_a1.id) {
+        Utils::parse_param(&signal_thr_a1.FESTE_HR, msg.data);
         //printf("window position %llu\n", signal_tvl_a3.FESTE_VL.val);
         return true;
     }

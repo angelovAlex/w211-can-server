@@ -28,6 +28,9 @@ public:
     Unit_EZS   unit_ezs = Unit_EZS();
     Unit_TVL   unit_tvl = Unit_TVL();
     Unit_TVR   unit_tvr = Unit_TVR();
+    Unit_THL   unit_thl = Unit_THL();
+    Unit_THR   unit_thr = Unit_THR();
+    Unit_KLA   unit_kla = Unit_KLA();
     
     Feature_Windows features_windows = Feature_Windows();
     

@@ -8,6 +8,9 @@
 
 #include "Parser.hpp"
 #include <iostream>
+#include <string.h>
+#include <stdlib.h>
+//#include <cmath>
 
 Parser::Parser()
 {
@@ -38,7 +41,7 @@ uint32_t Parser::parse_str_to_uint(char *buf, char*str, uint8_t from, uint8_t to
     memcpy(buf, str + from, to - from);
     buf[to - from] = '\0';
     try {
-        return (uint32_t)std::stoul(buf,nullptr,base);
+        return (uint32_t)strtoul(buf,nullptr,base);
     } catch(...) {
         
     }

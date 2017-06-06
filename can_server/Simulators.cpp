@@ -27,7 +27,7 @@ void AGW_Simulator::loop(float time)
         
         
         //{0, tach1, tach2, 0, 0, 86, 150, 62}
-        BusB::b().send(CANMSG(0x308, 8, 0, rand()%23 + 5, 0, 0, 86, 150, 62));
+        //BusB::b().send(CANMSG(0x308, 8, 0, rand()%23 + 5, 0, 0, 86, 150, 62));
         //BusB::b().send(CANMSG(0x212, 8, 128, 32, 32, 32, 32, 32, 32, 32));
         BusB::b().send(CANMSG(0x328, 8, 191, 254, 123, 193, 0, 2, 0, 0));
         BusB::b().send(CANMSG(0x608, 8, 140, 0, 0, 0 ,0 ,10 , 0, 0));

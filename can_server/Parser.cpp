@@ -15,7 +15,7 @@ Parser::Parser()
     buffer_length = -1;
 }
 
-void Parser::parse_string(char *str, ssize_t len)
+void Parser::parse_string(char *str, unsigned int len)
 {
     for (int i = 0; i < len; i++) {
         char v = str[i];
@@ -45,7 +45,7 @@ uint32_t Parser::parse_str_to_uint(char *buf, char*str, uint8_t from, uint8_t to
     return 0;
 }
 
-void Parser::parse_buffer(char *str, ssize_t len)
+void Parser::parse_buffer(char *str, unsigned int len)
 {
     if (str[0] != 'm') return;
     

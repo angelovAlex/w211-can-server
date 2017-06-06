@@ -23,13 +23,13 @@ class Parser {
     
     
     uint32_t parse_str_to_uint(char *buf, char*str, uint8_t from, uint8_t to, uint8_t base);
-    void parse_buffer(char *str, ssize_t len);
+    void parse_buffer(char *str, unsigned int len);
     void parse_message(CANMSG msg);
     void print_msg(CANMSG msg);
     
 public:
     Parser();
-    void parse_string(char *str, ssize_t len);
+    void parse_string(char *str, unsigned int len);
     BusB *busB;
     
 };

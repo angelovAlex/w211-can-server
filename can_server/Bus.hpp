@@ -42,7 +42,7 @@ public:
         return canB;
     }
     void setFd(int fd, Parser *parser);
-    void receive_raw(char *str, ssize_t len);
+    void receive_raw(char *str, unsigned int len);
     
     void send(CANMSG msg);
     void receive(CANMSG msg);

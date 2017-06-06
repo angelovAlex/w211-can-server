@@ -29,12 +29,12 @@ void BusB::send(CANMSG msg)
     char buf[100];
     sprintf(buf, "r %d %d %x %x %x %x %x %x %x %x\n", msg.address, msg.len, msg.data[0], msg.data[1], msg.data[2], msg.data[3], msg.data[4], msg.data[5], msg.data[6], msg.data[7]);
     size_t len = strlen(buf);
-    ssize_t wrote = write(this->fd, buf, len);
+    unsigned int wrote = write(this->fd, buf, len);
     //printf("-> %s", buf);
     //usleep(100);
 }
 
-void BusB::receive_raw(char *str, ssize_t len)
+void BusB::receive_raw(char *str, unsigned int len)
 {
     this->parser->parse_string(str, len);
 }

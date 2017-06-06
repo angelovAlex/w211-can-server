@@ -104,7 +104,7 @@ int main(int argc, const char * argv[]) {
     BusB::b().setFd(fd, &parser);
     
     char buf [1000];
-    ssize_t n;
+    unsigned int n;
     struct timeval begin;
     gettimeofday(&begin, NULL);
     unsigned long long begin_time = begin.tv_sec * 1000000LL + begin.tv_usec;

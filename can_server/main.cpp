@@ -58,8 +58,7 @@ int set_interface_attribs (int fd, int speed, int parity)
     return 0;
 }
 
-void
-set_blocking (int fd, int should_block)
+void set_blocking (int fd, int should_block)
 {
     struct termios tty;
     memset (&tty, 0, sizeof tty);
@@ -77,8 +76,13 @@ set_blocking (int fd, int should_block)
 }
 
 int main(int argc, const char * argv[]) {
-    char *portname = "/dev/cu.wchusbserial1420";
+    const char *portname; // = "/dev/cu.wchusbserial1420";
     
+    if (argc > 1) {
+        portname = argv[1];
+    } else {
+        printf("Usage: ./server <port>\n");
+    }
     
     AGW_Simulator::global().enabled = false;
     

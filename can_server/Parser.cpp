@@ -106,5 +106,5 @@ void Parser::parse_buffer(char *str, ssize_t len)
 
 void Parser::parse_message(CANMSG msg)
 {
-    BusB->receive(msg);
+    busB->receive(msg);
 }

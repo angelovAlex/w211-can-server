@@ -21,7 +21,7 @@ void BusB::setFd(int fd, Parser *parser)
 {
     this->fd = fd;
     this->parser = parser;
-    this->parser->BusB = this;
+    this->parser->busB = this;
 }
 
 void BusB::send(CANMSG msg)

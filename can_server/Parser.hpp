@@ -30,7 +30,7 @@ class Parser {
 public:
     Parser();
     void parse_string(char *str, ssize_t len);
-    BusB *BusB;
+    BusB *busB;
     
 };
 
